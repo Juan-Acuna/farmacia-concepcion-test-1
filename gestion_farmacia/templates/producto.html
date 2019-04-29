@@ -3,13 +3,13 @@
 <main style="text-align:center;position:relative;z-index:1;">
         <h1>Realizar compra</h1>
         <hr style="width:80%;">
-        <form action="/comprar/{{producto.id}}" method="post" style="width:80%;">
+        <form action="/comprar/{{producto.id}}/" method="post" style="width:80%;">
                 {% csrf_token %}
             <div class="form" style="text-align:left;width: 48%;padding-top:0;">
                 <h3 style="margin-bottom:12%;">{{producto.nombre}}</h3>
                 <p>Precio: {{producto.precio_unidad}}</p>
                 {% for l in labs %}
-                        {% if l.id == p.laboratorio %}
+                        {% if l.id == producto.laboratorio %}
                             <p>Laboratorio: {{l.nombre}}.</p>
                         {% endif %}
                     {% endfor %}

@@ -207,6 +207,7 @@ def Busqueda(request):
 def Compra(request,pk):
     novistas = False
     res = None
+    labs = None
     headers = {'content-type': 'application/json'}
     if request.method == 'POST':
         if request.POST['boton'] == 'C':
@@ -224,7 +225,10 @@ def Compra(request,pk):
             headers['Authorization'] = 'Bearer '+sesion.token
             res = False
             url = '/reserva/'
-            obj = {'usuario':user.rut,'reservas':[request.POST['cantidad'],pk]}
+            v1 = int(request.POST['cantidad']
+            v2 = pk
+            o = [v1, v2]
+            obj = {'usuario':user.rut,'reservas':o)}
         r = requests.post(urlBase + url,headers=headers,data=json.dumps(obj))
         if r.status_code == 200:
             j = r.json()
