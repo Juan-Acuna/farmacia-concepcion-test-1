@@ -28,7 +28,7 @@
     cursor: pointer;
     width:31%;
     display:inline-block;
-    height:7em;
+    height:12em;
     margin:0px 3px 9px 3px;
     padding: 4px 4px 0px 6px;
     background-color: rgb(62, 184, 255);
@@ -109,7 +109,7 @@
     padding:1px;
     margin-left: 2px;
     font-weight: bold;
-    font-size: 1.8em;
+    font-size: 1.5em;
 }
 .res-item-lab{
     color:#bbb;

@@ -7,9 +7,12 @@
                 {% csrf_token %}
             <div class="form" style="text-align:left;width: 48%;padding-top:0;">
                 <h3 style="margin-bottom:12%;">{{producto.nombre}}</h3>
-                <p>Precio: {{producto.precio_unitario}}</p>
-                <p>Laboratorio: {{producto.laboratorio}}</p>
-                <p>Detalles:{{producto.descripcion_prod}}</p>
+                <p>Precio: {{producto.precio_unidad}}</p>
+                {% for l in labs %}
+                        {% if l.id == p.laboratorio %}
+                            <p>Laboratorio: {{l.nombre}}.</p>
+                        {% endif %}
+                    {% endfor %}
                 <div style="height:25%;display: inline-block;"></div>
             </div>
             <div class="form" style="text-align:left;width: 48%;">

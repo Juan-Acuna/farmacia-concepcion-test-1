@@ -205,19 +205,23 @@ def Busqueda(request):
 
 #REGISTRADO
 def Compra(request,pk):
-    if not sesion.activa:
-        return HttpResponseRedirect('/login')
     novistas = False
     res = None
-    headers = {'content-type': 'application/json','Authorization':'Bearer '+sesion.token}
+    headers = {'content-type': 'application/json'}
     if request.method == 'POST':
         if request.POST['boton'] == 'C':
+            headers['Authorization'] = 'Bearer '+sesion.token
+            if not sesion.activa:
+                return HttpResponseRedirect('/login')
             #Compra
             res = True
             url = '/compra/'
             obj = {'usuario':user.rut,'cantidad':request.POST['cantidad'],'producto':pk}
         else:
+            if not sesion.activa:
+                return HttpResponseRedirect('/login')
             #Reserva
+            headers['Authorization'] = 'Bearer '+sesion.token
             res = False
             url = '/reserva/'
             obj = {'usuario':user.rut,'reservas':[request.POST['cantidad'],pk]}
@@ -244,9 +248,12 @@ def Compra(request,pk):
         else:
             texto = 'Hubo un problema al consultar al servidor.'
     else:
+        rlab = requests.get(urlBase + '/laboratorio/',headers=headers)
+        labs = rlab.json()
         url = '/producto/'+pk
-        producto = requests.get(urlBase + url,headers=headers)
-    context = {'user':user,'novistas':novistas,'sesion':sesion.activa,'producto':producto,'volver':{'url':'#','D':'none'}}
+        pr = requests.get(urlBase + url,headers=headers)
+        producto = pr.json()
+    context = {'user':user,'novistas':novistas,'sesion':sesion.activa,'labs':labs,'producto':producto,'volver':{'url':'#','D':'none'}}
     return render(request,'producto.html',context)
 
 def Res_compra(request):
