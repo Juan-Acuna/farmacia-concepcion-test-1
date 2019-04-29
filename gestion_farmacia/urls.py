@@ -1,20 +1,19 @@
 from django.conf.urls import url
-from . import views
-
+from .views import Inicio,Login,Logout,Perfil,Notificaciones,VerNotificacion,Busqueda,Compra,Res_compra,Res_reserva,Soporte,Recupera,Faq
 urlpatterns = [
-    url(r'^$', views.Inicio, name="inicio"),
-    url(r'^login/$', views.Login),
-    url(r'^logout/$', views.Logout),
-    url(r'^perfil/$', views.Perfil),
-    url(r'^notificaciones/$', views.Notificaciones),
-    url(r'^notificaciones/(?P<pk>[0-9]+)/$', views.VerNotificacion),
-    url(r'^resultados/$', views.Busqueda),
-    url(r'^comprar/(?P<pk>[0-9]+)/$', views.Compra),
-    #url(r'^reservar/(?P<pk>[0-9]+)/$', views.Reserva),
-    url(r'^resultado-compra/$', views.Res_compra),
-    url(r'^resultado-reserva/$', views.Res_reserva),
-    url(r'^soporte/$', views.Soporte),
-    url(r'^recuperar-contrasena/$', views.Recupera),
-    url(r'^faq/$', views.Faq),
+    url(r'^$', Inicio, name="inicio"),
+    url(r'^login/$', Login),
+    url(r'^logout/$', Logout),
+    url(r'^perfil/$', Perfil),
+    url(r'^notificaciones/$', Notificaciones),
+    url(r'^notificaciones/(?P<pk>[0-9]+)/$', VerNotificacion),
+    url(r'^resultados/$', Busqueda),
+    url(r'^comprar/(?P<pk>[0-9]+)/$', Compra),
+    #url(r'^reservar/(?P<pk>[0-9]+)/$', Reserva),
+    url(r'^resultado-compra/$', Res_compra),
+    url(r'^resultado-reserva/$', Res_reserva),
+    url(r'^soporte/$', Soporte),
+    url(r'^recuperar-contrasena/$', Recupera),
+    url(r'^faq/$', Faq),
     
 ]

@@ -210,42 +210,38 @@ def Compra(request,pk):
     labs = None
     headers = {'content-type': 'application/json'}
     if request.method == 'POST':
+        headers['Authorization'] = 'Bearer '+sesion.token
+        url = '/reserva/'
+        if not sesion.activa:
+                return HttpResponseRedirect('/login')
         if request.POST['boton'] == 'C':
-            headers['Authorization'] = 'Bearer '+sesion.token
-            if not sesion.activa:
-                return HttpResponseRedirect('/login')
-            #Compra
             res = True
-            url = '/compra/'
-            obj = {'usuario':user.rut,'cantidad':request.POST['cantidad'],'producto':pk}
         else:
-            if not sesion.activa:
-                return HttpResponseRedirect('/login')
-            #Reserva
-            headers['Authorization'] = 'Bearer '+sesion.token
-            res = False
-            url = '/reserva/'
-            v1 = int(request.POST['cantidad']
-            v2 = pk
-            o = [v1, v2]
-            obj = {'usuario':user.rut,'reservas':o)}
+            res = False  
+        o = [{'cantidad':int(request.POST['cantidad']),'producto':int(pk)}]
+        obj = {'usuario':user.rut,'reservas':o}
         r = requests.post(urlBase + url,headers=headers,data=json.dumps(obj))
-        if r.status_code == 200:
+        if r.status_code == 200 or r.status_code == 201:
             j = r.json()
+            n = None
             if res:
                 #primero medio de pago (simulado)
-                n = Notificacion()
-                n.ausnto = 'Compra realizada'
-                n.mensaje = 'Se ha realizado una compra en su cuenta.\n Detalles: ID Producto: '+ j['producto'] +', Cantidad: '+j['cantidad']
-                n.usuario = user.rut
-                localnot += n
+                #n = Notificacion()
+                #n.ausnto = 'Compra realizada'
+                #reservas = j['reservas']
+                #pp = reservas[0]
+                #n.mensaje = 'Se ha realizado una compra en su cuenta.\n Detalles: ID Producto: '+ str(pp['producto']) +', Cantidad: '+str(pp['cantidad'])
+                #n.usuario = user.rut
+                #localnot += n
                 return HttpResponseRedirect('/resultado-compra/')
             else:
-                n = Notificacion()
-                n.ausnto = 'Reserva realizada'
-                n.mensaje = 'Se ha realizado una reserva en su cuenta.\n Detalles: ID Producto: '+ j['producto']
-                n.usuario = user.rut
-                localnot += n
+                #n = Notificacion()
+                #n.ausnto = 'Reserva realizada'
+                #reservas = j['reservas']
+                #pp = reservas[0]
+                #n.mensaje = 'Se ha realizado una compra en su cuenta.\n Detalles: ID Producto: '+ str(pp['producto']) +', Cantidad: '+str(pp['cantidad'])
+                #n.usuario = user.rut
+                #localnot += n
                 return HttpResponseRedirect('/resultado-reserva/')
         elif r.status_code == 403:
             return HttpResponseRedirect('/login')

@@ -25,9 +25,9 @@
             <div>
                 <a href="/resultados/" class="btn-cancel" style="width:20%;">Cancelar</a>
                 {% if producto.necesita_receta %}
-                    <input type="submit" value="Reservar" class="btn-login" style="width:20%;" onmouseover="document.getElementByTid('H').value='R';">
+                    <input type="submit" value="Reservar" class="btn-login" style="width:20%;" onmouseenter="document.getElementById('H').value='R';">
                 {% else %}
-                    <input type="submit" value="Comprar" class="btn-login" style="width:20%;" onmouseover="document.getElementByTid('H').value='R';">
+                    <input type="submit" value="Comprar" class="btn-login" style="width:20%;" onmouseenter="document.getElementById('H').value='C';">
                 {% endif %}
                 <!--AQUI PONER ALGO PARA NOTIFICAR QUE NECESITA RECETA MEDICA-->
             </div>
