@@ -131,6 +131,8 @@ def Notificaciones(request):
             texto = 'No tienes notificaciones pendientes.'
     elif r.status_code == 400:
         texto = 'Hubo un problema al consultar al servidor.'
+    elif r.status_code == 404:
+        texto = 'No tienes notificaciones pendientes.'
     else:
         return HttpResponseRedirect('/login')
     context = {'user':user,'sesion':sesion.activa,'novistas':novistas, 'notificaciones':notificaciones,'texto':texto,'volver':{'url':'/','D':'block'}}
