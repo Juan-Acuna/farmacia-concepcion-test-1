@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+{% block content %}
+<main style="text-align:center;">
+    <form method="POST" action="/resultados/">
+            {% csrf_token %}
+        <h1>Buscar productos</h1>
+        <div style="padding:0em 4em">
+            <input name="busqueda" type="search"  placeholder="Escriba el nombre del producto"
+            style="border:1px solid #999;outline:0;width:88%;border-top-left-radius: 50px;border-bottom-left-radius: 50px;">
+            <button type="submit" class="btn-buscar"
+            style="width:9%;border-top-right-radius: 50px;border-bottom-right-radius: 50px;">
+            <img src="/static/img/search.png" style="width:2em;" alt="">
+        </button> 
+        </div>
+        <input type="hidden" name="pagina" value="main">
+    </form>
+    <div>
+        <a href="/soporte/">
+            <button class="recuadros">
+                <p>¿Necesitas ayuda?</p>
+                <p>Soporte al consumidor</p>
+            </button>
+        </a>
+        <a href="/faq/">
+            <button class="recuadros">
+                <p>¿Tienes dudas?</p>
+                <p>Preguntas frecuentes</p>
+            </button>
+        </a>
+    </div>
+</main>
+{% endblock %}

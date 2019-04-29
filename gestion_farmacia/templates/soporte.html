@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <main style="text-align:center;position:relative;z-index:1;">
+        <h1>Ayuda</h1>
+        <hr style="width:80%;">
+        <p>Por favor, complete el siguiente formulario de ayuda 
+            para buscar una solucion a su problema.</p>
+        <form action="" method="post" style="text-align:left;">
+                {% csrf_token %}
+            <label>Escriba su problema o duda aquí &DownArrow;</label>
+            <textarea></textarea>
+            <input type="submit" value="Enviar" class="btn-login">
+        </form>
+    </main>
+{% endblock %}

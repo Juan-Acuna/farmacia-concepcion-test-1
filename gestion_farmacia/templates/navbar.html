@@ -1,0 +1,54 @@
+{% block navbar %}
+{%if novistas%}
+<style>
+    #campana,#campana2{
+        display:flex;
+    }
+</style>
+{%else%}
+<style>
+    #campana,#campana2{
+        display:none;
+    }
+</style>
+{%endif%}
+<header style="position:relative;z-index:50;">
+    <a href="/"><img src="/static/img/logo.png" class="logo"></a>
+    <div class="user-text-container" style="position:relative;z-index:10;">
+        {%if not sesion%}<a href="/login/" class="user-text-button">Iniciar sesión</a>{%endif%}
+            <img id="user" style="position:relative;z-index:20;" class="user-img"
+                src="/static/img/{% if sesion %}user2.png{% else %}user1.png{% endif %}"
+                {%if sesion%}
+                    onclick="mostrarMenu()"
+                {%endif%}
+            >
+        <img id="campana" src="/static/img/campana.png" style="position:absolute;z-index:30;
+        right:1em;top:1.2em;">
+    </div>{% if sesion %}
+    <ul id="userMenu" class="user-menu" type="none">
+        <li class="user-menu-item"><a href="/perfil/">Perfil</a></li>
+        <li class="user-menu-item" style="position:relative;z-index:20;"
+            onclick="document.getElementById('campana2').style.display='none';
+            document.getElementById('campana').style.display='none';">
+            <a href="#">Notificaciones</a>
+            <img id="campana2" src="/static/img/campana.png" style="position:absolute;z-index:30;
+            left:0.9em;top:1.2em;">
+        </li>
+        <li class="user-menu-item-divisor"><div class="divisor-h"></div></li>
+        <li class="user-menu-item"><a href="/logout/">Cerrar sesión</a></li>
+        {% endif %}
+    </ul>
+</header>
+<script>
+    var menu = document.getElementById('userMenu');
+    var user = document.getElementById('user');
+    window.onclick = function (event) {
+        if (event.target != menu && user != event.target) {
+            menu.style.display = "none";
+        }
+    }
+    function mostrarMenu() {
+        menu.style.display = "block";
+    }
+</script>
+{% endblock %}

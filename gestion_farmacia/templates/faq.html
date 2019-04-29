@@ -1,0 +1,80 @@
+{%extends 'base.html'%}
+{% block content %}
+    <main style="text-align:center;">
+        <h1>Preguntas frecuentes</h1>
+        <hr style="width:80%;margin-top:0px;margin-bottom:0px;">
+        <div class="cont-pregunta">
+            <h3 class="pregunta">¿En que consiste esta aplicación?</h3>
+            <p class="respuesta">Esta es una aplicacion para la farmacia popular de la comuna de Concepción, esta esta 
+                diseñada para optimizar la atencion al cliente, ademas de transparentar el catalogo de productos.
+            </p>
+        </div>
+        <div class="cont-pregunta">
+            <h3 class="pregunta">¿Quien tiene acceso a mis datos personales?</h3>
+            <p class="respuesta">Sus datos personales se encuentran seguros en la base de datos de la farmacia popular, 
+                protegida por estrictos protocolos de seguridad y estos no pueden si seran puestos a disposición con terceros 
+                sin su consentimiento*.<span style="font-size:0.7em;color:#ececec;">  &sext;Excepto en casos especiales que quedan a criterio 
+                del alcalde de la comuna de Concepción o de un pariente/conocido cercano.</span>
+            </p>
+        </div>
+        <div class="cont-pregunta">
+            <h3 class="pregunta">¿Es posible realizar la compra de medicamentos?</h3>
+            <p class="respuesta">Si. De hecho esa es la razon de existir de esta aplicacion, ser una instancia
+                para que cualquier residente de la comuna pueda acceder al catalogo de productos que ofrece la farmacia
+                popular de su comuna.
+            </p>
+        </div>
+        <div class="cont-pregunta">
+            <h3 class="pregunta">¿Necesito estar registrado para usar la aplicación?</h3>
+            <p class="respuesta">Si, pero puede acceder al buscador de productos de forma anonima para ver su disponibilidad
+                y precios, sin embargo no podra realizar la compra de estos.
+            </p>
+        </div>
+        <div class="cont-pregunta">
+            <h3 class="pregunta">¿Necesito pagar para utilizar el servicio?</h3>
+            <p class="respuesta">No. la aplicacion esta disponible de forma gratuita para todas las personas que cuenten con
+                un dispositivo que tenga acceso a internet. Ademas, quienes viven en la comuna pueden registrarse de manera
+                gratuita para poder acceder a servicios como compra y reserva de productos.
+            </p>
+        </div>
+        <div class="cont-pregunta">
+            <h3 class="pregunta">¿Es posible realizar la compra de organos?</h3>
+            <p class="respuesta">No, no es posible. Esta funcion no ha sido aprobada hasta el momento, por problemas legales.
+                Si requiere de un organo humano por favor pongase en contacto con la mafia que administra su barrio o puede
+                escribir un mail a contact@bodydealers.zzepta.kar.
+            </p>
+        </div>
+        <div class="cont-pregunta">
+            <h3 class="pregunta">¿Que necesito para registrarme?</h3>
+            <p class="respuesta">Para poder resgistrarse, el primer requisito es pertenecer a la comuna de Concepsión 
+                y ser mayor de 14 años. Para registrarte ve hacia la farmacia popular y solicita el registro. El  encargado 
+                de la farmacia pedira tus datos. Luego recibiras un documento con los datos de tu cuenta y las instrucciones 
+                para activarla. ¡Buena suerte!.
+            </p>
+        </div>
+        <div style="height:100px;"></div>
+        <div class="cont-pregunta" style="text-align:center;">
+            <h3 class="pregunta">¿Quedaste con dudas?</h3>
+            <p class="respuesta">Puedes escribirnos en <a class="link-def" href="/soporte/">soporte al consumidor</a> para darnos a conocer alguna
+                inquietud que tengas.
+            </p>
+        </div>
+        <div style="height:100px;"></div>
+    </main>
+    <style>
+        .cont-pregunta{
+            text-align: left;
+            width:80%;
+            margin:1% 10%;
+            padding:10px;
+            background-color: #f8f8f8;
+        }
+        .pregunta{
+            display:block;
+        }
+        .respuesta{
+            display:inline-block;
+            margin:0px;
+        }
+    </style>
+{% endblock %}

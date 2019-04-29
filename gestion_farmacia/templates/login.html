@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{% block content %}
+<main style="text-align:center;">
+    <form style="width:30%;" method="POST">
+        {% csrf_token %}
+        <h1>Iniciar sesión</h1>
+        <hr style="margin-bottom:1em; border-style:solid;">
+        <div class="msg-def" style="display:{{dspl}};">
+            {{msg}}
+        </div>
+        <div class="cont-login">
+            <label>RUT</label>
+            <input name="rut" type="text">
+        </div>
+        <div class="cont-login" style="padding-bottom:0em;">
+            <label>Contraseña</label>
+            <input name="password" type="password">
+        </div>
+        <div style="text-align:right;width:100%;">
+            <a href="#" class="link-def" style="font-size:0.8em;text-align:right;">Recuperar contraseña.</a>
+        </div>
+        <button class="btn-login">Iniciar sesión</button>
+    </form>
+</main>
+{% endblock %}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/estilo-base.css" rel="stylesheet" type="text/css">
+    <link href="css/estilo-formularios.css" rel="stylesheet" type="text/css">
+    <link href="css/estilo-busqueda.css" rel="stylesheet" type="text/css">
+    <link href="css/popup.css" rel="stylesheet" type="text/css">
+    <script src="js/programa-base.js"></script>
+    <title>titulo</title>
+</head>
+<body >
+        <a id="volver-flotante" class="btn-flotante boton-standar" style="display:block;" href="/">&LeftArrow; Volver</a>
+    
+
+<style>
+    #campana,#campana2{
+        display:none;
+    }
+</style>
+
+<header style="position:relative;z-index:50;">
+    <a href="/"><img src="/static/img/logo.png" class="logo"></a>
+    <div class="user-text-container" style="position:relative;z-index:10;">
+        <a href="/login/" class="user-text-button">Iniciar sesión</a>
+            <img id="user" style="position:relative;z-index:20;" class="user-img"
+                src="/static/img/user1.png"
+                
+            >
+        <img id="campana" src="/static/img/campana.png" style="position:absolute;z-index:30;
+        right:1em;top:1.2em;">
+    </div>
+    </ul>
+</header>
+<script>
+    var menu = document.getElementById('userMenu');
+    var user = document.getElementById('user');
+    window.onclick = function (event) {
+        if (event.target != menu && user != event.target) {
+            menu.style.display = "none";
+        }
+    }
+    function mostrarMenu() {
+        menu.style.display = "block";
+    }
+</script>
+
+    
+    <main style="text-align:center;position:relative;z-index:1;">
+        <div class="res-cont-1">
+            <div class="res-cont-head-1">
+                <h1>Resultados</h1>
+                <hr style="width:65%;">
+            </div>
+            <div class="res-fil-1">
+                <span>
+                    Filtros: <!--<span class="res-fil-sub-1">Algo<span class="res-fil-sub-x">&times;</span></span>-->
+                </span>
+            </div>
+            <div class="res-item-cont-1">
+                <div style="text-align:center;width:68%;">
+                    <p style="color:#000;"></p>
+                </div>
+                
+                <div class="res-item-1">
+                    <div class="res-item-id">ID: 1</div>
+                    <div class="res-item-name">Paracetamol</div>
+                    
+                        
+                            <div class="res-item-lab">Bayer.</div>
+                        
+                    
+                    
+                    <div>
+                        <div class="res-item-price">$1590</div>
+                        <div class="res-item-button">
+                            <a style="padding:1px 4px;" class="boton-standar" href="/comprar/1">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+    <form class="res-fil-cont-1" method="POST" action="/resultados/">
+            <input type="hidden" name="csrfmiddlewaretoken" value="FiF8xlV8wWoFoeHy9ilEfSc2Gj0mTeWEp0ynOLsuMsJ17jmak9EjTuKjbJFfd6lW">
+        <div class="res-fil-item-1">
+            <h3 style="margin-bottom:0.5em;">Buscar</h3>
+            <input id="input-busqueda" name="busqueda" type="search"  placeholder="Producto/Farmaco"
+            style="border:1px solid#999;outline:0;padding:2% 6%;height:3em;width:78%;border-top-left-radius: 50px;border-bottom-left-radius: 50px;">
+            <button type="submit" class="btn-buscar"
+            style="width:19%;border-top-right-radius: 50px;border-bottom-right-radius: 50px;">
+            <img src="/static/img/search.png" style="width:1.9em;" alt="">
+        </button> 
+        </div>
+        <hr style="width:95%;margin-top:0px;">
+        <div class="res-fil-item-1">
+            <h3>Filtros</h3>
+        </div>
+        <div class="res-fil-item-1" style="text-align:start;">
+            <input type="checkbox" name="" id="" style="width:auto;margin:8px;">
+            <label for="">Por Laboratorio</label>
+            <input name="lab" type="text" style="padding:2% 6%;height:3em;">   
+        </div>
+        <!--<div class="res-fil-item-1" style="text-align:start;">
+            <input type="checkbox" name="" id="" style="width:auto;margin:8px;">
+            <label for="">Por tipo</label>
+            <input type="text" style="padding:2% 6%;height:3em;">   
+        </div>-->
+        <input type="hidden" name="pagina" value="res">
+    </form>
+
+    <footer>
+    </footer>
+</body>
+</html>

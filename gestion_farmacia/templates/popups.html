@@ -1,0 +1,68 @@
+{%block content%}
+	<div id="pop-email" class="modal">
+		<form class="modal-content animate" style="max-width:530px;padding:0px;" action="/perfil/" method="POST">
+			{% csrf_token %}
+			<div class="imgcontainer">
+				<span onclick="document.getElementById('pop-email').style.display='none'" class="close" title="Close Modal">&times;</span>
+				<h2>Cambiar correo electronico</h2>
+			</div>
+			<div style="padding: 2em 1.7em">
+				<label for="email">Nuevo correo</label>
+				<input name="email" id="email" type="email" style="margin-bottom: 3em;">
+				<hr>
+				<label for="pass">Confirmar cambio por contraseña</label>
+				<input name="password" id="pass" type="password">
+				<input type="hidden" name="cambio" value="email">
+			</div>
+			<div class="msg-def" style="display:{{dspl}};">
+				{{msg}}
+			</div>
+			<div style="text-align:center;">
+				<button class="cancelar" onclick="document.getElementById('pop-email').style.display='none';">Cancelar</button>
+				<button class="cambiar" type="submit">Cambiar</button>  
+			</div>
+		</form>
+	</div>
+	<div id="pop-pass" class="modal">
+		<form class="modal-content animate" style="max-width:530px;padding:0px;" action="/perfil/" method="POST">
+			{% csrf_token %}
+			<div class="imgcontainer">
+				<span onclick="document.getElementById('pop-pass').style.display='none'" class="close" title="Close Modal">&times;</span>
+				<h2>Cambiar contraseña</h2>
+			</div>
+			<div style="padding: 0em 1.7em">
+				<label for="npass">Nueva contraseña</label>
+				<input name="new-pass" id="npass" type="password" style="margin-bottom: 1em;">
+				<label for="npass2">Confirmar contraseña</label>
+				<input name="new-pass2" id="npass2" type="password" style="margin-bottom: 2em;">
+				<hr>
+				<label for="pass">Confirmar cambio por contraseña</label>
+				<input name="password" id="pass" type="password" style="margin-bottom: 2em;">
+				<input type="hidden" name="cambio" value="pass">
+			</div>
+			<div class="msg-def" style="display:{{dspl}};">
+				{{msg}}
+			</div>
+			<div style="text-align:center;">
+				<button class="cancelar" onclick="document.getElementById('pop-pass').style.display='none';">Cancelar</button>
+				<button class="cambiar" type="submit">Cambiar</button>  
+			</div>	
+		</form>
+	</div>
+	<script>
+		var email = document.getElementById('pop-email');
+		var pass = document.getElementById('pop-pass');
+
+		window.onclick = function (event) {
+			if (event.target == email) {
+				email.style.display = "none";
+			}
+			if(event.target == pass){
+				pass.style.display = "none";
+			}
+			msgs = document.getElementsByClassName("msg-def");
+			msgs[0].style.display="none";
+			msgs[1].style.display="none";
+		}
+	</script>
+{%endblock%}

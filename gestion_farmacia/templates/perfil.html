@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    <main style="text-align:center;">
+        <h1>Perfil</h1>
+        <div class="block-cont">
+            <h3 style="margin:0.5em;">Datos personales</h3>
+            <div class="sub-block">
+                <span class="sub-block-text">RUT: {{user.rut}}</span>
+                <span class="sub-block-text">Fecha nacimiento: {{user.fecha_nac}}</span>
+            </div>
+        </div>
+        <div class="block-cont">
+            <h3 style="margin:0.5em;">Datos de la cuenta</h3>
+            <div class="sub-block">
+                <span class="sub-block-text" style="width:45%;">Correo electronico: {{user.email}}</span>
+                <a class="sub-block-text link-def" style="width:45%;" onclick="document.getElementById('pop-pass').style.display='flex';">Cambiar contraseña </a>
+                <a class="sub-block-text link-def" style="width:45%;" onclick="document.getElementById('pop-email').style.display='flex';">Cambiar correo</a>
+            </div>
+        </div>
+    </main>
+{% include 'popups.html' %}
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if {{res}} %}{% endif %}
+    <main style="text-align:center;">
+        <h1 style="font-size:1.7em;">¡Compra exitosa!</h1>
+        <hr style="margin-bottom:1em; border:1px solid; width: 30%;">
+        <p style="font-size:1.5em;">Su compra ha sido realizada, dirijase a la farmacia popular y con su rut retire su producto.</p>
+        <p><a href="/" class="link-def">Volver a la pantalla principal.</a></p>
+    </main>
+{% else %}
+    <main style="text-align:center;">
+        <h1 style="font-size:1.7em;">¡Reserva exitosa!</h1>
+        <hr style="margin-bottom:1em; border:1px solid; width: 30%;">
+        <p style="font-size:1.5em;">Su reserva ha sido realizada, dirijase a la farmacia popular y con su rut compre su producto.</p>
+        <p style="font-size:1.2em;"></p>
+        <p><a href="/" class="link-def">Volver a la pantalla principal.</a></p>
+    </main>
+{% endif %}
+{% endblock content %}

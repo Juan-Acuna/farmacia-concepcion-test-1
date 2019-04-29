@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%block content%}
+<main style="text-align:center;">
+    <form style="width:30%;">
+            {% csrf_token %}
+        <h1 style="font-size:1.7em;">Recuperar contraseña</h1>
+        <hr style="margin-bottom:1em; border-style:solid;">
+        <p style="text-align:justify;">Para recuperar la contraseña de su cuenta, por favor ingrese su RUT
+            y presione el boton "Enviar correo" para enviar una clave temporal
+             al correo asociado a su cuenta.
+        </p>
+        <div class="msg-def" style="display:{{dspl}};">
+            {{msg}}
+        </div>
+        <div class="cont-login">
+            <label>RUT</label>
+            <input name="rut" type="text">
+        </div>
+        <!--<div class="cont-login" style="padding-bottom:0em;">
+            <label>Contraseña</label>
+            <input name="password" type="password">
+        </div>
+        <div style="text-align:right;width:100%;">
+            <a href="#" style="text-decoration:underline;
+            color:royalblue;font-size:0.8em;text-align:right;">Recuperar contraseña.</a>
+        </div>-->
+        <input class="btn-login" type="submit" value="Enviar correo">
+    </form>
+</main>
+{%endblock%}

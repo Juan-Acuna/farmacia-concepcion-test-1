@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{%block content%}
+<main style="text-align:center;position:relative;z-index:1;">
+        <h1>Realizar compra</h1>
+        <hr style="width:80%;">
+        <form action="/comprar/{{producto.id}}" method="post" style="width:80%;">
+                {% csrf_token %}
+            <div class="form" style="text-align:left;width: 48%;padding-top:0;">
+                <h3 style="margin-bottom:12%;">{{producto.nombre}}</h3>
+                <p>Precio: {{producto.precio_unitario}}</p>
+                <p>Laboratorio: {{producto.laboratorio}}</p>
+                <p>Detalles:{{producto.descripcion_prod}}</p>
+                <div style="height:25%;display: inline-block;"></div>
+            </div>
+            <div class="form" style="text-align:left;width: 48%;">
+                <p>Stock: {{producto.stock}}</p>
+                <!-- MUY IMPORTANTE CONSIDERAR EL MAXIMO SEMANAL PARA LA CANTIDAD EN LA COMPRA-->
+                <label for="cantidad">Cantidad</label>
+                <input id="cantidad" name="cantidad" style="width:30%;margin-left:5%;" type="number" max="{{producto.maximo_semanal}}">
+                
+            </div>
+            <div>
+                <a href="/resultados/" class="btn-cancel" style="width:20%;">Cancelar</a>
+                {% if producto.necesita_receta %}
+                    <input type="submit" value="Reservar" class="btn-login" style="width:20%;" onmouseover="document.getElementByTid('H').value='R';">
+                {% else %}
+                    <input type="submit" value="Comprar" class="btn-login" style="width:20%;" onmouseover="document.getElementByTid('H').value='R';">
+                {% endif %}
+                <!--AQUI PONER ALGO PARA NOTIFICAR QUE NECESITA RECETA MEDICA-->
+            </div>
+            <input id="H" type="hidden" name="boton" value="">
+        </form>
+    </main>
+{%endblock%}

@@ -1,0 +1,156 @@
+html,body{
+    padding:0px;
+    margin:0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #fafafa;
+    min-height: 15em;
+}
+header{
+    height: 90px;
+    width: 100%;
+    color:#3090ff;
+    background-color: #ffffff;
+}
+.link-def{
+    text-decoration:underline;
+    color:royalblue;
+    cursor: pointer;
+}
+.link-def:hover{
+    color:#4f9fe1;
+}
+a{
+    text-decoration: inherit;
+    color: inherit;
+}
+h1{
+    cursor: default;
+}
+.logo{
+    cursor: pointer;
+    padding:5px;
+    padding-left:20px;
+    height: 5em;
+    /*background-color:#fafafa;*/
+    background-repeat: no-repeat;
+}
+.user-img{
+    cursor: pointer;
+    padding:0em;
+    margin:1em;
+    height: 3.5em;
+    border-radius: 100%;
+    border: 1px solid #000000;
+    float: right;
+}
+.user-text-container{
+    padding: 0em;
+    min-width: 156px;
+    text-align: center;
+    float: right;
+}
+.user-text{
+    color: inherit;
+    font-family: inherit;
+    font-size: 1.17em;
+    padding: 1.8em 0.5em;
+    text-decoration: none;
+    margin: 0px;
+    display: inline-block;
+}
+.user-text-button{
+    /*color: inherit;*/
+    color:#55ccff;
+    font-family: inherit;
+    font-size: 1em;
+    padding: 2.2em 0.5em;
+    text-decoration: none;
+    margin: 0px;
+    float: left;
+}
+.user-text:hover,.user-text-button:hover{
+    background-color: #3090ff;
+    color:#ffffff;
+    cursor: pointer;
+}
+.user-menu{
+    margin:0px 1px;
+    display:none;
+    position:absolute;
+    background-color:transparent;
+    padding:0.5em;
+    box-sizing:border-box;
+    right: 0em;
+    opacity: 0.95;
+    top:5.2em;
+    cursor: pointer;
+}
+.user-menu-item{
+    text-align: center;
+    cursor: inherit;
+    Color:#000000;
+    background-color:#efefef;
+    padding:1em 2em;
+    border:1px #efefef solid;
+}
+.user-menu-divisor{
+    text-align: center;
+    cursor: default;
+    Color:#000000;
+    background-color:#efefef;
+    padding:1em 2em;
+    border:1px #efefef solid;
+    padding:2px;height: 2px;
+}
+.user-menu-item:hover{
+    background-color:#fcfcfc;
+    border-color:1px #000000 solid;
+}
+.block-cont{
+    background-color: #fff;
+    padding:0.5em;
+    width: 80%;
+    min-width: 300px;
+    margin:0.5em;
+    display:inline-block;
+    text-align:left;
+}
+.sub-block{
+    background-color: transparent;
+    padding:20px 0px;
+    width:100%;
+}
+.sub-block-text{
+    display:inline-block;
+    margin:0% 1%;
+    width:31%;
+    font-size:0.9em;
+}
+
+.btn-flotante {
+    border: 1px solid #000;
+    /*width: 7em;
+    height: 2em;*/
+    padding: 9px 18px 9px 9px;
+    text-align:center;
+    position: fixed;
+    bottom: 1em;
+    top: inherit !important;
+    right: 1.5em;
+    z-index: 999;
+    opacity: 0.8;
+    display:block;
+}
+.btn-flotante:hover{
+    opacity:1;
+}
+.boton-standar{
+    color:#3090ff;
+    border: 1px solid #3090ff;
+    background-color: #fff;
+}
+.boton-standar:hover{
+    color:#ffffff;
+    border: 1px solid #000;
+    background-color: #3090ff;
+}
