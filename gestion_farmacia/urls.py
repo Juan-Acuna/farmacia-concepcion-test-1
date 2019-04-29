@@ -10,7 +10,7 @@ urlpatterns = [
     url(r'^notificaciones/(?P<pk>[0-9]+)/$', views.VerNotificacion),
     url(r'^resultados/$', views.Busqueda),
     url(r'^comprar/(?P<pk>[0-9]+)/$', views.Compra),
-    url(r'^reservar/(?P<pk>[0-9]+)/$', views.Reserva),
+    #url(r'^reservar/(?P<pk>[0-9]+)/$', views.Reserva),
     url(r'^resultado-compra/$', views.Res_compra),
     url(r'^resultado-reserva/$', views.Res_reserva),
     url(r'^soporte/$', views.Soporte),
