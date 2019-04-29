@@ -259,11 +259,11 @@ def Compra(request,pk):
     return render(request,'producto.html',context)
 
 def Res_compra(request):
-    context = {'res':True}
+    context = {'res':True,'user':user,'sesion':sesion.activa}
     return render(request,'res_compra.html',context)
 
 def Res_reserva(request):
-    context = {'res':False}
+    context = {'res':False,'user':user,'sesion':sesion.activa}
     return render(request,'res_compra.html',context)
 
 #REGISTRADO
