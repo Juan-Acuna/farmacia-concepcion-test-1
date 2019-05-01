@@ -22,7 +22,7 @@ def getSesion():
 def Inicio(request):
     novistas = False
     context = {'user':user,'sesion':sesion.activa,'novistas':novistas,'volver':{'url':'#','D':'none'}}
-    return render(request,'main.html',context)
+    return render(request,'base/main.html',context)
 
 def Login(request):
     msg = ''
@@ -47,10 +47,10 @@ def Login(request):
             msg = ujson['message']
             dspl = 'inline-block'
     context = {'sesion':sesion.activa,'novistas':False,'msg':msg,'dspl':dspl,'volver':{'url':'/','D':'block'}}
-    return render(request,'login.html',context)
+    return render(request,'base/login.html',context)
 
 def Recupera(request):
-    template = 'recupera.html'
+    template = 'base/recupera.html'
     msg = ''
     dspl ='none'
     if request.method == 'POST':
@@ -62,7 +62,7 @@ def Recupera(request):
             msg = 'El rut no esta registrado.'
             dspl = 'inline-block'
         else:
-            template = 'recupera2.html'
+            template = 'base/recupera2.html'
     context = {'sesion':sesion.activa,'novistas':False,'msg':msg,'dspl':dspl,'volver':{'url':'/login/','D':'block'}}
     return render(request,template,context)
 
@@ -78,10 +78,10 @@ def Soporte(request):
     novistas = False
     context = {'user':user,'novistas':novistas,'sesion':sesion.activa,'volver':{'url':'/','D':'block'}}
     if request.method == 'POST':
-        return render(request,'soporte2.html',context)    
-    return render(request,'soporte.html',context)
+        return render(request,'base/soporte2.html',context)    
+    return render(request,'base/soporte.html',context)
 
 def Faq(request):
     novistas = False
     context = {'user':user,'novistas':novistas,'sesion':sesion.activa,'volver':{'url':'/','D':'block'}}
-    return render(request,'faq.html',context)
+    return render(request,'base/faq.html',context)

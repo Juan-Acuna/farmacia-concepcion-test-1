@@ -51,7 +51,7 @@ def Perfil(request):
         elif r.status_code == 403:
             return HttpResponseRedirect('/login')
     context = {'user':user,'sesion':sesion.activa,'novistas':novistas,'dspl':dspl,'msg':msg,'volver':{'url':'/','D':'block'}} 
-    return render(request,'perfil.html',context)
+    return render(request,'usuario/perfil.html',context)
 
 #REGISTRADO
 def Notificaciones(request):
@@ -77,19 +77,15 @@ def Notificaciones(request):
     else:
         return HttpResponseRedirect('/login')
     context = {'user':user,'sesion':sesion.activa,'novistas':novistas, 'notificaciones':notificaciones,'texto':texto,'volver':{'url':'/','D':'block'}}
-    return render(request,'notificaciones.html',context)
+    return render(request,'usuario/notificaciones.html',context)
 
 def VerNotificacion(request,pk):
     if not sesion.activa:
         return HttpResponseRedirect('/login')
     novistas = False
-    notifi = None
-    #for n in notificaciones:
-    #    if n.id == pk:
-    #        notifi = n
-    url = '/notificacion/' + notifi.id
+    url = '/notificacion/' + pk
     headers = {'content-type': 'application/json','Authorization':'Bearer '+sesion.token}
     obj = {'esta_visto':True}
     r = requests.get(urlBase + url,headers=headers,data=json.dumps(obj))
-    context = {'user':user,'sesion':sesion.activa,'novistas':novistas,'notificacion':notifi,'volver':{'url':'/notificaciones/','D':'block'}}
-    return render(request,'notificaciones.html',context)
+    context = {'user':user,'sesion':sesion.activa,'novistas':novistas,'volver':{'url':'/notificaciones/','D':'block'}}
+    return render(request,'usuario/notificaciones.html',context)

@@ -29,7 +29,7 @@ def Busqueda(request):
                 texto = 'No se realizó busqueda.'
                 productos = None
                 context = {'user':user,'sesion':sesion.activa,'novistas':novistas,'texto':texto,'productos':productos,'fil':filtros,'tipos':tipos,'labs':labs,'volver':{'url':'/','D':'block'}}
-                return render(request,'busqueda.html',context)
+                return render(request,'compra/busqueda.html',context)
         else:
             obj = {}
             if len(request.POST['busqueda']) > 0:
@@ -61,7 +61,7 @@ def Busqueda(request):
         texto = 'No se realizó busqueda.'
         productos = None
     context = {'user':user,'sesion':sesion.activa,'novistas':novistas,'texto':texto,'productos':productos,'fil':filtros,'tipos':tipos,'labs':labs,'volver':{'url':'/','D':'block'}}
-    return render(request,'busqueda.html',context)
+    return render(request,'compra/busqueda.html',context)
 
 def Compra(request,pk):
     novistas = False
@@ -100,7 +100,7 @@ def Compra(request,pk):
         pr = requests.get(urlBase + url,headers=headers)
         producto = pr.json()
     context = {'user':user,'novistas':novistas,'sesion':sesion.activa,'labs':labs,'producto':producto,'volver':{'url':'#','D':'none'}}
-    return render(request,'producto.html',context)
+    return render(request,'compra/producto.html',context)
 
 def webpay(request,costo):
     context = {'monto':costo}
@@ -108,8 +108,8 @@ def webpay(request,costo):
 
 def Res_compra(request):
     context = {'res':True,'user':user,'sesion':sesion.activa}
-    return render(request,'res_compra.html',context)
+    return render(request,'compra/res_compra.html',context)
 
 def Res_reserva(request):
     context = {'res':False,'user':user,'sesion':sesion.activa}
-    return render(request,'res_compra.html',context)
+    return render(request,'compra/res_compra.html',context)
