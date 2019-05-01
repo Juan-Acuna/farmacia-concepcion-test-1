@@ -103,6 +103,9 @@ def Compra(request,pk):
     return render(request,'compra/producto.html',context)
 
 def webpay(request,costo):
+    if not sesion.activa:
+        return HttpResponse('<h1 style="font-size:3em;">Forbiden</h1>'
+        +'<p>La transaccion no existe o no tienes permiso para acceder a ella.</p><a class="link-def"href="/">volver a la página principal</a>')
     context = {'monto':costo}
     render(request,'webpay/webpay-index.html',context)
 
