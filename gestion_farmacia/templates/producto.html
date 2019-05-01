@@ -8,6 +8,7 @@
             <div class="form" style="text-align:left;width: 48%;padding-top:0;">
                 <h3 style="margin-bottom:12%;">{{producto.nombre}}</h3>
                 <p>Precio: {{producto.precio_unidad}}</p>
+                <input type="hidden" name="precio" value="{{producto.precio_unidad}}">
                 {% for l in labs %}
                         {% if l.id == producto.laboratorio %}
                             <p>Laboratorio: {{l.nombre}}.</p>
