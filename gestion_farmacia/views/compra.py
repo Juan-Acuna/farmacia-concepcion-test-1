@@ -63,7 +63,6 @@ def Busqueda(request):
     context = {'user':user,'sesion':sesion.activa,'novistas':novistas,'texto':texto,'productos':productos,'fil':filtros,'tipos':tipos,'labs':labs,'volver':{'url':'/','D':'block'}}
     return render(request,'busqueda.html',context)
 
-#REGISTRADO
 def Compra(request,pk):
     novistas = False
     res = None
@@ -86,7 +85,6 @@ def Compra(request,pk):
             n = None
             if res:
                 costo = int(request.POST['cantidad']) * int(request.POST['precio'])
-                #primero medio de pago (simulado)
                 return HttpResponseRedirect('/webpay.tbk=A324dF_3L6%hSDs3%53sNJdKS4&%92s3=X2a1W%A_33&THW2s=26d%5fX2H1d5&9Sa=A_8dF&G=H7DL&5L=GD666/'+ costo +'/')
                 #return HttpResponseRedirect('/resultado-compra/')
             else:
