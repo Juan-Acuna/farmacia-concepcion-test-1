@@ -1,4 +1,4 @@
-{%extends 'base.html'%}
+{% extends 'base.html' %}
 {% block content %}
 <main style="text-align:center;position:relative;z-index:1;">
         <h1>Notificaciones</h1>
@@ -9,7 +9,7 @@
             <div class="sub-block">
                 <span class="sub-block-text">Tipo notificación: {{n.tipo}}</span>
                 <span class="sub-block-text" style="width:50%;">Asunto: {{n.asunto}}</span>
-                <a href="" class="sub-block-text link-def" style="width:10%;">Detalles</a>
+                <a href="/notificaciones/{{n.id}}" class="sub-block-text link-def" style="width:10%;">Detalles</a>
             </div>
         </div>
         {% endfor %}

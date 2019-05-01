@@ -1,0 +1,123 @@
+html,body{
+    margin:0px;
+    padding:0px;
+    background-image:url(/static/webpay/img/background.png);
+    background-repeat:repeat;
+}
+.logo-webpay{
+    height:5em;
+    float:right;
+}
+.logo-empresa{
+    height:5em;
+}
+.webpay-header{
+    background-color:transparent;
+    padding:1px 4px;
+    border: 1px solid #dadada;
+    margin:1%;
+    text-align: justify;
+}
+.webpay-body{
+    background-color:transparent;
+    height: 11.3em;
+    border: none;
+    /*width:100%;*/
+    margin:1% 1% 0% 1%;
+    padding:0px;
+}
+.webpay-footer{
+    text-align: right;
+    padding:10px 1px 18px 1px;;
+    margin:0% 1% 1% 1%;
+    background-color:transparent;
+    border: none;
+}
+.webpay-body-top{
+    padding: 4% 10% 8.5% 10%;
+    background-color:transparent;
+}
+.webpay-body-mid{
+    padding: 0% 10% 2% 10%;
+    border:1px solid #dadada;
+    border-top-style:none;
+    border-bottom-style:none;
+    background-color:#efeff1;
+}
+.webpay-body-bot{
+    padding:12px 6px 6px 6px;
+    margin:0%;
+    background-color:#dadada;
+}
+.webpay-body-ltop,.webpay-body-rtop{
+    padding:1.5% 5%;
+    width:38%;
+    background-color:#efeff1;
+    border: 1px solid #dadada;
+    border-bottom-style: none;
+}
+.webpay-body-ltop{
+    border-top-right-radius: 7px;
+    float:left;
+}
+.webpay-body-rtop{
+    border-top-left-radius: 7px;
+    float:right;
+}
+.webpay-btn{
+    background-color:#f6bc00;
+    border:4px solid #f6c03e;
+    padding:6px 18px;
+    border-radius:7px;
+    font-weight:bolder;
+    font-size:1em;
+    margin:0% 5%;
+    outline: none;
+    cursor:pointer;
+}
+.webpay-text{
+    font-family: Arial;
+    font-size:1em;
+    font-weight: bolder;
+    display:inline-block;
+}
+.images{
+    height: 1.5em;
+}
+/*               POPUP              */
+.imgcontainer {
+    text-align: center;
+    margin:5% 0;
+    position: relative;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    border: 1px solid #888;
+    border-radius: 7px;
+    width: 80%;
+}
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
