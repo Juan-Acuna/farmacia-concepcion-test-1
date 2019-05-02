@@ -85,7 +85,7 @@ def Compra(request,pk):
             n = None
             if res:
                 costo = int(request.POST['cantidad']) * int(request.POST['precio'])
-                return HttpResponseRedirect('/webpay.tbk=A324dF_3L6hSDs353sNJdKS4&92s3=X2a1WA_33THW2s=26d5fX2H1d59Sa=A_8dF&G=H7DL&5L=GD666/'+ costo +'/')
+                return HttpResponseRedirect('/webpay.tbk=A324dF_3L6hSDs353sNJdKS4&92s3=X2a1WA_33THW2s=26d5fX2H1d59Sa=A_8dF&G=H7DL&5L=GD666/'+ str(costo) +'/')
                 #return HttpResponseRedirect('/resultado-compra/')
             else:
                 return HttpResponseRedirect('/resultado-reserva/')
@@ -107,7 +107,7 @@ def webpay(request,costo):
         return HttpResponse('<h1 style="font-size:3em;">Forbiden</h1>'
         +'<p>La transaccion no existe o no tienes permiso para acceder a ella.</p><a class="link-def"href="/">volver a la página principal</a>')
     context = {'monto':costo}
-    render(request,'webpay/webpay-index.html',context)
+    return render(request,'webpay/webpay-index.html',context)
 
 def Res_compra(request):
     context = {'res':True,'user':user,'sesion':sesion.activa}
