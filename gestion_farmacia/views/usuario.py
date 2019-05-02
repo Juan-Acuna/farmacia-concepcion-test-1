@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from gestion_farmacia.models import Usuario, Notificacion, OrdenDeCompra, Producto, SolicitudReserva,TicketSoporte, Sesion
-from base import getSesion,getURL,getUser
+from .base import getSesion,getURL,getUser
 import requests
 import json
 
