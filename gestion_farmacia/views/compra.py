@@ -85,7 +85,7 @@ def Compra(request,pk):
             n = None
             if res:
                 costo = int(request.POST['cantidad']) * int(request.POST['precio'])
-                return HttpResponseRedirect('/webpay.tbk=A324dF_3L6%hSDs3%53sNJdKS4&%92s3=X2a1W%A_33&THW2s=26d%5fX2H1d5&9Sa=A_8dF&G=H7DL&5L=GD666/'+ costo +'/')
+                return HttpResponseRedirect('/webpay.tbk=A324dF_3L6hSDs353sNJdKS4&92s3=X2a1WA_33THW2s=26d5fX2H1d59Sa=A_8dF&G=H7DL&5L=GD666/'+ costo +'/')
                 #return HttpResponseRedirect('/resultado-compra/')
             else:
                 return HttpResponseRedirect('/resultado-reserva/')
