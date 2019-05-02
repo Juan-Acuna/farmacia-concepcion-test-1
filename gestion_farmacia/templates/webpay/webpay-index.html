@@ -56,9 +56,9 @@
         <script>
             var i = 1;
             function Iniciar(){
-                duracion = Math.floor(Math.random() * (12 - 3) + 3);
+                duracion = Math.floor(Math.random() * (15 - 5) + 5);
                 tiempo = duracion*1000;
-                setTimeout(Mostrar, 1000);
+                setTimeout(Mostrar, 1500);
                 setTimeout(Pagar, tiempo);
             }
             function Mostrar(){
@@ -78,7 +78,7 @@
                 setTimeout(Animar, 600);
             }
             function Pagar(){
-                location.href = "/resultado-pago/";
+                location.href = "/resultado-compra/";
             }
         </script>
     </main>
