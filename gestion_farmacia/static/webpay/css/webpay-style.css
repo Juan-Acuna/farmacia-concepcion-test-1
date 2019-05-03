@@ -109,7 +109,9 @@ html,body{
     margin: 15% auto;
     border: 1px solid #888;
     border-radius: 7px;
-    width: 80%;
+    width: 25em;
+    height:11em;
+    padding:0%;
 }
 .animate {
     -webkit-animation: animatezoom 0.3s;
