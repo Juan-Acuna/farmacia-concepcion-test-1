@@ -16,8 +16,9 @@
                     <p style="color:#000;">{{texto}}</p>
                 </div>
                 {% for p in productos %}
-                <div class="res-item-1">
-                    <div class="res-item-id">ID: {{p.id}}</div>
+                <div class="res-item-1" onmouseenter="document.getElementById('{{p.id}}').style.color='#ccc';"
+                    onmouseleave="document.getElementById('{{p.id}}').style.color='#fff';">
+                    <div class="res-item-id" id="{{p.id}}">ID: {{p.id}}</div>
                     <div class="res-item-name">{{p.nombre}}</div>
                     {% for l in labs %}
                         {% if l.id == p.laboratorio %}
@@ -28,7 +29,7 @@
                     <div>
                         <div class="res-item-price">${{p.precio_unidad}}</div>
                         <div class="res-item-button">
-                            <a style="padding:1px 4px;" class="boton-standar" href="/comprar/{{p.id}}/">Ver</a>
+                            <a style="padding:0px 15px;" class="boton-standar" href="/comprar/{{p.id}}/">Ver</a>
                         </div>
                     </div>
                 </div>

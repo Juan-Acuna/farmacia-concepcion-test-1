@@ -28,15 +28,16 @@
     cursor: pointer;
     width:31%;
     display:inline-block;
-    height:12em;
+    height:8em;
     margin:0px 3px 9px 3px;
     padding: 4px 4px 0px 6px;
-    background-color: rgb(62, 184, 255);
-    border: 1px solid #f7f7f7;
+    background-color: #e9e4e6;
+    border: 1px solid #f6f6f6;
 }
 .res-item-1:hover{
+    opacity: 0.8;
     border: 1px solid #eee;
-    background-color: rgb(109, 214, 255);
+    background-color: #f6f6f6;
 }
 .res-fil-cont-1{
     width:20%;
@@ -94,7 +95,7 @@
     padding:0px 4px;
 }
 .res-item-id{
-    color: #ccc;
+    color: #fff;
     font-size: 0.7em;
     text-align:right;
     margin-right: 2px;
@@ -112,7 +113,8 @@
     font-size: 1.5em;
 }
 .res-item-lab{
-    color:#bbb;
+    opacity: 0.5;
+    font-weight: bolder;
     padding:0px 1px;
     margin-top:0px;
     vertical-align: top;
