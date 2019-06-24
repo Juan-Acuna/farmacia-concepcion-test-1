@@ -6,7 +6,7 @@ import json
 #json.dumps() para convertir de python a json
 #json.loads() para convertir de json a python
 
-urlBase = 'http://sheemin.club/api/v1' #RESERVADO PARA LA URL DEL SERVIDOR
+urlBase = 'http://localhost:80/api/v1' #RESERVADO PARA LA URL DEL SERVIDOR
 user = Usuario() #NO TOCAR
 sesion = Sesion() #NO TOCAR
 
